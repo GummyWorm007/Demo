@@ -1,2 +1,2 @@
-# Game Demo 3rd Person
- Game demo
+Game Demo for a 3rd Person game
+
