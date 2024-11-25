@@ -20,16 +20,15 @@ func _input(event):
 		camera_mount.rotate_x(deg_to_rad(-event.relative.y*sens_vertical))
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+#gravity code
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
+#movement controls
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
