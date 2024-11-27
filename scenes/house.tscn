@@ -1,7 +1,7 @@
 [gd_scene load_steps=58 format=4 uid="uid://p7oyw4a5dmr7"]
 
-[ext_resource type="PackedScene" uid="uid://dsq10sskx7kl5" path="res://Assessts/Models/House/wall-doorway-square.glb" id="1_w8qkd"]
-[ext_resource type="Texture2D" uid="uid://dli80a752h2y8" path="res://Assessts/Models/House/Textures/colormap.png" id="2_ak3of"]
+[ext_resource type="PackedScene" uid="uid://dsq10sskx7kl5" path="res://Assets/Models/House/wall-doorway-square.glb" id="1_w8qkd"]
+[ext_resource type="Texture2D" uid="uid://dli80a752h2y8" path="res://Assets/Models/House/Textures/colormap.png" id="2_ak3of"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lx0po"]
 points = PackedVector3Array(0.0499805, 2.4, 0.999804, -0.0500196, 2.4, 0.999804, 0.0499805, -7.21911e-15, 0.999804, 0.0999805, 2.1498, 0.549922, 0.0999805, 2.19984, 0.499804, 0.1, 2.19984, -0.500196, 0.0500001, 2.4, -1, -0.05, 2.4, -1, -0.1, 2.19984, -0.500196, -0.1, 2.19984, 0.499804, -0.1, 2.1498, 0.549922, -0.0500196, -7.21911e-15, 0.999804, 0.0999805, -7.21911e-15, 0.549922, 0.1, -7.21911e-15, -0.550117, 0.1, 2.1498, -0.550117, 0.0500001, -7.21911e-15, -1, -0.05, -7.21911e-15, -1, -0.1, 2.1498, -0.550117, -0.1, -7.21911e-15, 0.549922, -0.1, -7.21911e-15, -0.550117)

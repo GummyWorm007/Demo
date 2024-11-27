@@ -1,9 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://m7nrrnvjk4a3"]
+[gd_scene load_steps=8 format=3 uid="uid://m7nrrnvjk4a3"]
 
-[ext_resource type="Texture2D" uid="uid://bnnxg6ovqapi6" path="res://Assessts/Textuers/Floor/earth-texture/696.jpg" id="1_e1wm4"]
-[ext_resource type="Texture2D" uid="uid://cq1idl17glstg" path="res://Assessts/Textuers/Grids/Orange/texture_09.png" id="2_ynbav"]
-[ext_resource type="Texture2D" uid="uid://dnvsb831buwcx" path="res://Assessts/Textuers/Grids/Purple/texture_09.png" id="3_7pfyr"]
-[ext_resource type="Texture2D" uid="uid://bbwe7ec7rm37g" path="res://Assessts/Textuers/Grids/Green/texture_09.png" id="4_hqn28"]
+[ext_resource type="Texture2D" uid="uid://bnnxg6ovqapi6" path="res://Assets/Textuers/Floor/earth-texture/696.jpg" id="1_e1wm4"]
 [ext_resource type="PackedScene" uid="uid://jwpa5swqek8b" path="res://scenes/player.tscn" id="5_ksxuw"]
 [ext_resource type="PackedScene" uid="uid://p7oyw4a5dmr7" path="res://scenes/house.tscn" id="6_mljf0"]
 
@@ -27,17 +24,6 @@ fog_density = 0.001
 albedo_texture = ExtResource("1_e1wm4")
 uv1_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qmwj"]
-albedo_texture = ExtResource("2_ynbav")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0gk8"]
-albedo_texture = ExtResource("3_7pfyr")
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hq43o"]
-albedo_texture = ExtResource("4_hqn28")
-uv1_triplanar = true
-
 [node name="world" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -49,31 +35,14 @@ environment = SubResource("Environment_ry88s")
 
 [node name="map" type="Node3D" parent="."]
 
+[node name="house" parent="map" instance=ExtResource("6_mljf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.02324, 0, -0.606763)
+
 [node name="floor" type="CSGBox3D" parent="map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 material_override = SubResource("StandardMaterial3D_dtabt")
 use_collision = true
 size = Vector3(1000, 1, 1000)
-
-[node name="box" type="CSGBox3D" parent="map"]
-transform = Transform3D(0.533688, 0, -0.845681, 0, 1, 0, 0.845681, 0, 0.533688, 3.71873, 0.5, 5.1208)
-material_override = SubResource("StandardMaterial3D_8qmwj")
-use_collision = true
-
-[node name="box2" type="CSGBox3D" parent="map"]
-transform = Transform3D(0.533688, 0, -0.845681, 0, 1, 0, 0.845681, 0, 0.533688, -1.97762, 0.945654, 5.25612)
-material_override = SubResource("StandardMaterial3D_t0gk8")
-use_collision = true
-size = Vector3(2, 1.90869, 2)
-
-[node name="box3" type="CSGBox3D" parent="map"]
-transform = Transform3D(0.930149, 0, -0.367183, 0, 1, 0, 0.367183, 0, 0.930149, 1.05972, 1.50303, -7.22446)
-material_override = SubResource("StandardMaterial3D_hq43o")
-use_collision = true
-size = Vector3(3, 3, 3)
-
-[node name="house" parent="." instance=ExtResource("6_mljf0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.02324, 0, -0.606763)
 
 [node name="Player" parent="." instance=ExtResource("5_ksxuw")]
 sens_horizontal = 0.3
