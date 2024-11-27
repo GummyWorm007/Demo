@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs6lyscj86p6j"]
+
+[ext_resource type="PackedScene" uid="uid://c2qshqm6vxxdl" path="res://Assessts/Models/House/wall-window-wide-square.glb" id="1_hqb4m"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ujtpg"]
+points = PackedVector3Array(-7.21911e-16, 0, -1.45, -7.21911e-16, 1.2, -1.45, -7.21911e-16, 0, 1.45, -7.21911e-16, 1.2, 1.45)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mkefn"]
+points = PackedVector3Array(-0.0500196, 0, -2, 0.0499804, 0, -2, -0.0500196, 0, 2, -0.1, 0.6, -1.5, -0.1, 0.649804, -1.55012, -0.0500196, 2.4, -2, 0.0499804, 2.4, -2, 0.0999804, 0.649804, -1.55012, 0.0999804, 0.6, -1.5, 0.0499804, 0, 2, -0.0500196, 2.4, 2, -0.1, 0.649804, 1.54973, -0.1, 0.6, 1.5, -0.1, 1.94988, -1.55012, -0.1, 1.99992, -1.5, 0.0499804, 2.4, 2, 0.0999804, 1.99992, -1.5, 0.0999804, 1.94988, -1.55012, 0.0999804, 0.6, 1.5, 0.0999804, 0.649804, 1.54973, -0.1, 1.94988, 1.54973, -0.1, 1.99992, 1.5, 0.0999804, 1.94988, 1.54973, 0.0999804, 1.99992, 1.5)
+
+[node name="wall-window-wide-square2" instance=ExtResource("1_hqb4m")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.18709e-14, 0.7, -1.58821e-14)
+shape = SubResource("ConvexPolygonShape3D_ujtpg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+shape = SubResource("ConvexPolygonShape3D_mkefn")
