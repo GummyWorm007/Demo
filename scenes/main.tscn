@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://m7nrrnvjk4a3"]
+[gd_scene load_steps=34 format=4 uid="uid://m7nrrnvjk4a3"]
 
 [ext_resource type="Texture2D" uid="uid://bnnxg6ovqapi6" path="res://Assets/Textuers/Floor/earth-texture/696.jpg" id="1_e1wm4"]
 [ext_resource type="Texture2D" uid="uid://wxkndsqpqixh" path="res://Assets/Grave/GLB format/Textures/colormap.png" id="3_5f6in"]
@@ -66,6 +66,74 @@ shadow_mesh = SubResource("ArrayMesh_f8coa")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_grmnr"]
 points = PackedVector3Array(0.436077, 0, -0.344534, -0.285591, 0.833333, -0.295714, -0.471751, 0.80337, -0.51, -0.507937, -0.00778428, -0.295714, 0.496951, 0.00122537, -0.5, 0.50793, 0.70628, -0.486159, -0.471751, 0.0221734, -0.51, 0.50793, 0.70628, -0.327491, 0.50793, 0.119186, -0.311614, -0.507937, 0.833333, -0.295714, -0.285591, 0.833333, -0.517915, -0.285591, -0.00778428, -0.517915, 0.50793, 0.119186, -0.502059, -0.285591, -0.00778428, -0.295714, 0.463186, 0.0291841, -0.32, 0.412569, 0.309642, -0.502037)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5r1ct"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("3_5f6in")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gntoc"]
+_surfaces = [{
+"aabb": AABB(-0.589, 0, -0.667279, 1.178, 2.28985, 1.33456),
+"format": 34896613377,
+"index_count": 834,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIAAgAEAAUABQAAAAIABwAGAAMAAwABAAcAAAAFAAgACAAJAAAACQABAAAACQAHAAEACgAJAAgACAALAAoABwAJAAoACgAGAAcACwAIAAUABQAEAAsADQAMAAQABAACAA0ADgALAAQABAAMAA4ABgAPABAAEAADAAYADQACAAMAAwAQAA0ABgAKABEAEQAPAAYAEQAKAAsACwAOABEAFAASABMAEwAVABQAEwAWABUAFgAXABUAFgAYABcAGAAZABcAGAAaABkAGgAbABkAGgAcABsAHAAdABsAIAAeAB8AHwAhACAAHwAiACEAIgAjACEAIgAkACMAJAAlACMAJAAmACUAJgAnACUAJgAoACcAKAApACcALAAqACsAKwAtACwAKwAuAC0ALgAvAC0ALgAwAC8AMAAxAC8AMAAyADEAMgAzADEAMgA0ADMANAA1ADMAOAA2ADcANwA5ADgANwA6ADkAOgA7ADkAOgA8ADsAPAA9ADsAPAA+AD0APgA/AD0APgBAAD8AQABBAD8ARABCAEMAQwBFAEQARgAiAB8AHwBHAEYAHwBIAEcASgBJAEQARABFAEoARQBLAEoAKABMAE0ATQBEACgARABJACgATgBHAEgASABPAE4ATwAhAE4ATQBMAFAAUAAiAE0AIgBGAE0ATgAhAFEAUQBLAE4ASwBFAE4AUwBSAEcARwBOAFMARABNAFQAVABCAEQAVABNAEYARgBVAFQAUwBOAEUARQBDAFMAVQBGAEcARwBSAFUATwBIAFYAVgAhAE8ASABPAFYAIQBWAE8AVwBIAB8AHwAiAFcASABXAB8AIgAfAFcAWABMACgAKABJAFgATABYACgASQAoAFgAUQAhAFkAWQBLAFEAIQBRAFkASwBZAFEASgBLAFoAWgBJAEoASwBKAFoASQBaAEoAWwAiAFAAUABMAFsAIgBbAFAATABQAFsAXgBcAF0AXQBfAF4AYQBgAF0AXQBcAGEAGwAdAGIAYgBjABsAYwAZABsAZQAaAGQAZABiAGUAYgAdAGUAYgBmAGcAZwBjAGIAaQBoABgAGAAaAGkAaABpABgAGgAYAGkAZAAaABgAGABoAGQAaABgAGQAXwAVABcAFwAZAF8AGQBjAF8AagAaAGUAZQAdAGoAGgBqAGUAHQBlAGoAYABoABMAEwBdAGAAEwASAF0AawASABMAEwBoAGsAEgBrABMAaAATAGsAYgBkAGwAbABmAGIAXQASABQAFABfAF0AFAAVAF8AGwAZAG0AbQAdABsAGQAbAG0AHQBtABsAFAASAG4AbgAVABQAEgAUAG4AFQBuABQAbABkAGAAYABhAGwAXgBfAGMAYwBnAF4AFwAVAG8AbwAZABcAFQAXAG8AGQBvABcAcgBwAHEAcQAtAHIAcAByAHEALQBxAHIAcwBwACsAKwAuAHMAcABzACsALgArAHMAdQAyAHQAdAB2AHUAMgB1AHQAdgB0AHUAeAAtAHcAdwAxAHgALQB4AHcAMQB3AHgAegAxAHkAeQB2AHoAMQB6AHkAdgB5AHoAfAAuAHsAewAyAHwALgB8AHsAMgB7AHwAegB2AH0AfQB+AHoAfgAxAHoAdAAyAH8AfwB9AHQAfQB2AHQAgAAtAHgAeAAxAIAAMQB+AIAAggB/AIEAgQCDAIIAhQCEAIAAgACGAIUAgACEAHAAcAByAIAAcgAtAIAAfQB/AIIAggCHAH0AgwCBAIQAhACFAIMAfQCHAIgAiAB+AH0AfwAyAHsAewAuAH8ALgCBAH8AgQAuACsAKwCEAIEAKwBwAIQAgAB+AIgAiACGAIAAiwCJAIoAigCMAI0AjgCKAI0AjwCKAI4AigCPAIsAiQCMAIoAkQCQAIwAjACJAJEAiQCSAJEAjwCOAJMAkwCUAI8AlACVAI8AlgCSAIkAiQCLAJYAiwCXAJYAjwCVAJgAmACXAI8AlwCLAI8AjQCZAJoAmgCOAI0AmgCTAI4AjACQAJsAmwCZAIwAmQCNAIwAnACZAJsAmwCQAJwAmQCcAJsAkACbAJwAmACVAJ0AnQCXAJgAlQCYAJ0AlwCdAJgAlACTAJ4AngCVAJQAkwCUAJ4AlQCeAJQAnwCTAJoAmgCZAJ8AkwCfAJoAmQCaAJ8AlgCXAKAAoACSAJYAlwCWAKAAkgCgAJYAoQCQAJEAkQCSAKEAkAChAJEAkgCRAKEA"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 162,
+"vertex_data": PackedByteArray("CpcAADmjAAD0aAAAOaMAAGWSPRUhnAAAmW09FSGcAADMpD0V/38AABSuAAD/fwAAMls9Ff9/AADqUQAA/38AAAqXAADFXAAA9GgAAMVcAACZbT0V3WMAAGWSPRXdYwAAJqFrKf9/AACTkGspV5kAAJOQaymnZgAA2F5rKf9/AABrb2spV5kAAGtvaymnZgAAydl6VD1SAADkrHpUXDsAAMnZelT/fwAAydl6VMGtAAD/f3pUeyQAAOSselSixAAAGlN6VFw7AAD/f3pUg9sAADUmelQ9UgAAGlN6VKLEAAA1JnpU/38AADUmelTBrQAAbdEAg/9/AAARvQCD32AAABG9AIMfnwAAtqgAgz6+AAC2qACDwEEAAP9/AIM+vgAA/38Ag8BBAABIVwCDPr4AAEhXAIPAQQAA7UIAgx+fAADtQgCD32AAAJEuAIP/fwAA//9rKf9/AAD/32spE08AAP/faynrsAAA/79rKdjhAAD/v2spJh4AAP9/aynY4QAA/39rKSYeAAD/P2sp2OEAAP8/aykmHgAA/x9rKeuwAAD/H2spE08AAAAAayn/fwAAwqtEtl9ZAADejUS2TVIAAMSzRLbAcwAAxrtEtiKOAAD7b0S2O0sAAOWlRLZzoQAAGVpEtoteAAADkES2w7QAADhERLbccQAAIHJEtrGtAAA6TES2PYwAADxURLafpgAAH1BEtv9/AAAPaES2mKQAAOJATJn/fwAAcGBMmT6wAACOn0yZwE8AABy/TJn/fwAAbdEAg/9/AACRLgCD/38AAO1CAIMfnwAASFcAgz6+AABIVwCDwEEAAHBgTJnATwAAjp9MmT6wAAARvQCDH58AAP9/AIPAQQAA/38Agz6+AADfr0S2/38AAO+XRLaYpAAAD2hEtmZbAADvl0S2ZlsAAOPPaX22qAAA489pfUhXAAAbMGl9SFcAAP9/aX1t0QAAGzBpfbaoAAD/f2l9kS4AAMm0AIMYZQAAl8W2aIhcAADJtACD5poAAJfFtmh2owAA/3+2aBE5AAD/fwCDMUoAAGc6tmh2owAA/3+2aO3GAABnOrZoiFwAADUmelT/fwAANUsAg+aaAAD/fwCDzbUAAP9/elR7JAAAREVoTzUmAACKCmhP/38AALq6aE81JgAANUsAgxhlAABERWhPydkAAHT1aE//fwAAurpoT8nZAAD//2sp/38AAJT9oiD/vwAA/99rKeuwAACU/aIg/z8AAP8faykTTwAAagKiIP8/AAAAAGsp/38AAP9/oiD//wAA/39rKdjhAABqAqIg/78AAP8faynrsAAA/39rKSYeAAD/f6IgAAAAAMoccjz/fwAAZE5yPNXLAABkTnI8KTQAAJqxcjzVywAAmrFyPCk0AABeWnpUeEYAAKClelR4RgAANONyPP9/AABAy3pU/38AAKClelSGuQAAvjR6VP9/AABeWnpUhrkAAC9kJ8aMmAAA/3////9/AAAtiifGiKEAAAFaJ8YDdwAA0XUnxnZeAADPmyfGcmcAAP2lJ8b7iAAAOEREttxxAAA6TES2PowAADxURLafpgAAwqtEtl9ZAADEs0S2wXMAAMa7RLYijgAAIHJEtrGtAAADkES2w7QAAOWlRLZzoQAA+29EtjtLAADejUS2TVIAABlaRLaLXgAAbE4EsjxUAACSsQSywqsAALjDBLL7bwAAJJIEsjhEAADabQSyxrsAAEY8BLIDkAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ucl6v"]
+resource_name = "pine_pine"
+_surfaces = [{
+"aabb": AABB(-0.589, 0, -0.667279, 1.178, 2.28985, 1.33456),
+"attribute_data": PackedByteArray("/xeYuf8XmLn/F1ef/xdXn/8XV5//F5i5/xdXn/8XmLn/F1ef/xdXn/8XmLn/F5i5/xeYuf8XmLn/F5i5/xeYuf8XmLn/F5i5/xeYuf8XmLn/F1ef/xdXn/8XmLn/F1ef/xeYuf8XV5//F5i5/xeYuf8XV5//F1ef/xdlhv8XV5//F2WG/xdXn/8XV5//F1ef/xdlhv8XZYb/F2WG/xdlhv8XV5//F1ef/xdXn/8XV5//F2WG/xdlhv8XV5//F2WG/xdXn/8XZYb/F1ef/xdXn/8XZYb/F2WG/5eYuf+XmLn/l5i5/5eYuf+XmLn/l5i5/5eYuf+XmLn/l5i5/5eYuf+XmLn/l5i5/5eYuf+XmLn/l5i5/5eYuf+XmLn/l5i5/5eYuf+XmLn/l5i5/5eYuf+XmLn/l5i5/5eYuf+XmLn/l5i5/5eYuf+XmLn/l5i5/5eYuf+XmLn/l5i5/5eYuf+XmLn/l5i5/5eYuf+XmLn/l5i5/5eYuf+XmLn/l5i5/5eYuf+XmLn/l5i5/5eYuf+XmLn/l5i5/5fMrP+XzKz/l1Se/5dUnv+XMpP/lzKT/5dUnv+XVJ7/lzKT/5cyk/+XVJ7/lzKT/5dUnv+XMpP/lzKT/5dUnv+XMpP/l1Se/5cyk/+XVJ7/lzKT/5dUnv+XMpP/lzKT/5cyk/+XMpP/l1Se/5cyk/+XVJ7/lzKT/5cyk/+XVJ7/lzKT/5dUnv+XzKz/l1Se/5fMrP+XVJ7/l1Se/5fMrP+XVJ7/l8ys/5dUnv+XVJ7/l8ys/5fMrP+XVJ7/l1Se/5fMrP+XzKz/l1Se/5dUnv+XzKz/l8ys/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5fMrP+Xqp3/l8ys/5eqnf+Xqp3/l6qd/5fMrP+XzKz/lzKT/5eqnf+XMpP/l6qd/5cyk/+XMpP/l6qd/5cyk/+Xqp3/lzKT/5fMrP+XzKz/l6qd/5eqnf+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/l6qd/5cyk/+Xqp3/lzKT/5cyk/+Xqp3/lzKT/5eqnf+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/l6qd/5eqnf+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+Xqp3/l8ys/5eqnf+XzKz/lzKT/5cyk/+Xqp3/l6qd/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/l6qd/5eqnf+XzKz/l8ys/5eqnf+Xqp3/l8ys/5fMrP+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+Xgp7/lzKT/5eCnv+XMpP/lzKT/5eCnv+XMpP/l4Ke/5cyk/+XMpP/lzKT/5eCnv+XMpP/l4Ke/5eCnv+Xgp7/l8ys/5fMrP+Xgp7/l4Ke/5fMrP+XzKz/l4Ke/5cyk/+Xgp7/lzKT/5cyk/+Xgp7/l8ys/5eCnv+XzKz/l4Ke/5eCnv+XzKz/l8ys/5fMrP+XzKz/l4Ke/5eCnv+XMpP/lzKT/5eCnv+XMpP/l4Ke/5cyk/+XMpP/l4Ke/5eCnv+XMpP/l4Ke/5fMrP+Xgp7/l8ys/5e2mP+XzKz/l7aY/5e2mP+Xtpj/l8ys/5fMrP+Xtpj/l7aY/5fMrP+Xtpj/l7aY/5e2mP+Xtpj/l8ys/5e2mP+XzKz/l7aY/5cyk/+Xtpj/lzKT/5e2mP+XMpP/l7aY/5cyk/+Xtpj/lzKT/5cyk/+XMpP/l7aY/5cyk/+Xtpj/lzKT/5cyk/+XMpP/l7aY/5cyk/+Xtpj/lzKT/5cyk/+Xtpj/l7aY/5cyk/+XMpP/lzKT/5e2mP+XMpP/l7aY/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT/5cyk/+XMpP/lzKT"),
+"format": 34896613399,
+"index_count": 834,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIABgAEAAUABQAHAAYACgAIAAkACQALAAoADgAMAA0ADQAPAA4ADwAQAA4ADwARABAAFAASABMAEwAVABQAGAAWABcAFwAZABgAHAAaABsAGwAdABwAIAAeAB8AHwAhACAAJAAiACMAIwAlACQAKAAmACcAJwApACgALAAqACsAKwAtACwAMAAuAC8ALwAxADAANAAyADMAMwA1ADQAOAA2ADcANwA5ADgANwA6ADkAOgA7ADkAOgA8ADsAPAA9ADsAPAA+AD0APgA/AD0APgBAAD8AQABBAD8ARABCAEMAQwBFAEQAQwBGAEUARgBHAEUARgBIAEcASABJAEcASABKAEkASgBLAEkASgBMAEsATABNAEsAUABOAE8ATwBRAFAATwBSAFEAUgBTAFEAUgBUAFMAVABVAFMAVABWAFUAVgBXAFUAVgBYAFcAWABZAFcAXABaAFsAWwBdAFwAWwBeAF0AXgBfAF0AXgBgAF8AYABhAF8AYABiAGEAYgBjAGEAYgBkAGMAZABlAGMAaABmAGcAZwBpAGgAbABqAGsAawBtAGwAawBuAG0AcQBvAHAAcAByAHEAcgBzAHEAdgB0AHUAdQB3AHYAdwB4AHYAewB5AHoAegB8AHsAfAB9AHsAgAB+AH8AfwCBAIAAgQCCAIAAhQCDAIQAhACGAIUAhgCHAIUAigCIAIkAiQCLAIoAjgCMAI0AjQCPAI4AkgCQAJEAkQCTAJIAlgCUAJUAlQCXAJYAmgCYAJkAmQCbAJoAngCcAJ0AnQCfAJ4AogCgAKEAowChAKAApgCkAKUApQCnAKYAqgCoAKkAqwCpAKgArgCsAK0ArQCvAK4AsgCwALEAswCxALAAtgC0ALUAtQC3ALYAugC4ALkAuwC5ALgAvgC8AL0AvQC/AL4AwgDAAMEAwwDBAMAAxgDEAMUAxQDHAMYAygDIAMkAywDJAMgAzgDMAM0AzQDPAM4A0gDQANEA0QDTANIA1gDUANUA1QDXANYA1wDYANYA2wDZANoA2gDcANsA3ADdANsA4ADeAN8A3wDhAOAA5ADiAOMA4wDlAOQA6ADmAOcA6QDnAOYA7ADqAOsA6wDtAOwA7QDuAOwA8QDvAPAA8ADyAPEA8gDzAPEA9gD0APUA9QD3APYA+gD4APkA+wD5APgA/gD8AP0A/QD/AP4A/QAAAf8AAwEBAQIBAgEEAQMBBwEFAQYBCAEGAQUBCwEJAQoBCgEMAQsBDwENAQ4BDgEQAQ8BDgERARABFAESARMBEwEVARQBGAEWARcBGQEXARYBHAEaARsBGwEdARwBIAEeAR8BIQEfAR4BJAEiASMBIwElASQBKAEmAScBJwEpASgBLAEqASsBKwEtASwBMAEuAS8BMQEvAS4BNAEyATMBMwE1ATQBOAE2ATcBOQE3ATYBPAE6ATsBOwE9ATwBQAE+AT8BQQE/AT4BRAFCAUMBQwFFAUQBSAFGAUcBSQFHAUYBTAFKAUsBSwFNAUwBUAFOAU8BUQFPAU4BVAFSAVMBUwFVAVQBWAFWAVcBWQFXAVYBXAFaAVsBWwFdAVwBYAFeAV8BYQFfAV4BZAFiAWMBYwFlAWQBZQFmAWQBaQFnAWgBaAFqAWkBagFrAWkBbgFsAW0BbQFvAW4BbwFwAW4BcwFxAXIBcgF0AXMBdwF1AXYBdgF4AXcBewF5AXoBegF8AXsBfAF9AXsBgAF+AX8BfwGBAYABhAGCAYMBgwGFAYQBiAGGAYcBhwGJAYgBjAGKAYsBiwGNAYwBjQGOAYwBkQGPAZABkAGSAZEBkAGTAZIBlgGUAZUBlQGXAZYBmgGYAZkBnQGbAZwBoAGeAZ8BowGhAaIBpgGkAaUBqQGnAagBrAGqAasBqwGtAawBrQGuAawBsQGvAbABsAGyAbEBsgGzAbEBtgG0AbUBtQG3AbYBtwG4AbYBuwG5AboBugG8AbsBvAG9AbsBwAG+Ab8BvwHBAcABvwHCAcEBxQHDAcQBxAHGAcUBxgHHAcUBygHIAckByQHLAcoBzgHMAc0BzwHNAcwB0gHQAdEB0QHTAdIB1gHUAdUB1wHVAdQB2gHYAdkB2QHbAdoB3gHcAd0B3wHdAdwB4gHgAeEB4QHjAeIB5gHkAeUB5wHlAeQB6gHoAekB6QHrAeoB7gHsAe0B7wHtAewB8gHwAfEB8QHzAfIB9gH0AfUB9wH1AfQB"),
+"material": SubResource("StandardMaterial3D_5r1ct"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 504,
+"vertex_data": PackedByteArray("CpcAADmjJZf0aAAAOaMll2WSPRUhnCWXmW09FSGcJZfMpD0V/38WwBSuAAD/fxbAZZI9FSGcK5gKlwAAOaMrmDJbPRX/fxbAmW09FSGcK5jqUQAA/38WwPRoAAA5oyuYFK4AAP9//78KlwAAxVz/vwqXAAA5o/+/9GgAAMVc/7/0aAAAOaP/v+pRAAD/f/+/9GgAAMVcZ+sKlwAAxVxn65ltPRXdY2frZZI9Fd1jZ+v0aAAAxVxF6pltPRXdY0Xq6lEAAP9/NsEyWz0V/382wQqXAADFXEXqFK4AAP9/NsFlkj0V3WNF6sykPRX/fzbBJqFrKf9/A8DMpD0V/38DwJOQaylXmdyVZZI9FSGc3JVlkj0V3WOX6sykPRX/fzbAk5BrKadml+omoWsp/382wNheayn/fwPAa29rKVeZ3JUyWz0V/38DwJltPRUhnNyVZZI9FSGcqZWZbT0VIZyplZOQaylXmamVa29rKVeZqZWZbT0V3WOX6mtvaymnZpfqMls9Ff9/NsDYXmsp/382wJltPRXdY8vqZZI9Fd1jy+prb2spp2bL6pOQaymnZsvqydl6VD1SusLkrHpUXDu6wsnZelT/f7rCydl6VMGtusL/f3pUeyS6wuSselSixLrCGlN6VFw7usL/f3pUg9u6wjUmelQ9UrrCGlN6VKLEusI1JnpU/3+6wjUmelTBrbrCbdEAg/9//78RvQCD32D/vxG9AIMfn/+/tqgAgz6+/7+2qACDwEH/v/9/AIM+vv+//38Ag8BB/79IVwCDPr7/v0hXAIPAQf+/7UIAgx+f/7/tQgCD32D/v5EuAIP/f/+///9rKf9//7//32spE0//v//faynrsP+//79rKdjh/7//v2spJh7/v/9/aynY4f+//39rKSYe/7//P2sp2OH/v/8/aykmHv+//x9rKeuw/7//H2spE0//vwAAayn/f/+/wqtEtl9Z/MXejUS2TVL8xcSzRLbAc/zFxrtEtiKO/MX7b0S2O0v8xeWlRLZzofzFGVpEtote/MUDkES2w7T8xThERLbccfzFIHJEtrGt/MU6TES2PYz8xTxURLafpvzFH1BEtv9/lqsPaES2mKSWq+JATJn/fzCscGBMmT6wMKy2qACDwEEh1xG9AIPfYGPYjp9MmcBP2NUcv0yZ/3/Y1W3RAIP/fyHXkS4Ag/9/0q/iQEyZ/38wrO1CAIMfny6zcGBMmT6wMKxIVwCDPr7Sr0hXAIPAQSHXcGBMmcBP2NXtQgCD32Bj2OJATJn/f9jVkS4Ag/9/Idccv0yZ/38wrG3RAIP/f9Kvjp9MmT6wMKwRvQCDH58us7aoAIM+vtKvSFcAg8BB////fwCDwEH//3BgTJnAT///tqgAg8BB//+On0yZwE///7aoAIM+vrCW/38Agz6+s52On0yZPrAVjEhXAIM+vrCWcGBMmT6wFYzfr0S2/3+Wqxy/TJn/fzCs75dEtpiklquOn0yZPrAwrHBgTJnAT9jVD2hEtmZbpNXiQEyZ/3/Y1R9QRLb/f6TVcGBMmcBP//+On0yZwE///w9oRLZmW///75dEtmZb//+On0yZPrAVjHBgTJk+sBWM75dEtpikYIkPaES2mKRgiY6fTJnAT9jVHL9Mmf9/2NXvl0S2Zluk1d+vRLb/f6TVbdEAg/9/0q/jz2l9tqiDvBG9AIMfny6ztqgAgz6+0q8RvQCDH5+SGePPaX22qIQmbdEAg/9/lRO2qACDPr6VE23RAIP/fyHXEb0Ag99gY9jjz2l9SFcy3LaoAIPAQSHX489pfUhXrBURvQCD32CaDm3RAIP/fzwLtqgAg8BBPAtIVwCDwEEh1+1CAIPfYGPYGzBpfUhXMtyRLgCD/38h1xswaX1IV6wV7UIAg99gmg5IVwCDwEE8C5EuAIP/fzwLtqgAgz6+sJb/f2l9bdEbrf9/AIM+vrOdSFcAgz6+sJb/fwCDPr6zHf9/aX1t0RsttqgAgz6+sBZIVwCDPr6wFkhXAIM+vtKvGzBpfbaog7ztQgCDH58us5EuAIP/f9Kv7UIAgx+fkhkbMGl9tqiEJkhXAIM+vpUTkS4Ag/9/lRO2qACDwEH///9/AIPAQf///39pfZEu//9IVwCDwEH///9/aX2RLgAA/38Ag8BBAAC2qACDwEEAAEhXAIPAQQAAybQAgxhlBMGXxbZoiFyowcm0AIPmmgTBl8W2aHajqMH/f7ZoETkc65fFtmiIXBzr/38AgzFK8OrJtACDGGXw6jUmelTBrbmiZzq2aHaj5JoaU3pUosRgqP9/tmjtxuSa/396VIPbuaI1JnpUPVKKxGc6tmiIXKjBNSZ6VP9/+sZnOrZodqOowTUmelTBrYrENUsAg+aa35j/fwCDzbXfmGc6tmh2o+Sa/3+2aO3G5Jr/f3pUeyTp6xpTelRcO5vsREVoTzUmoe41JnpUPVLp60RFaE81JjMMGlN6VFw7uQj/f3pUeyQLBzUmelQ9UgsHNSZ6VD1S6esaU3pUXDub7Gc6tmiIXBzr/396VHsk6ev/f7ZoETkc68nZelTBrbmi5Kx6VKLEYKiXxbZodqPkmv9/elSD27mi/3+2aO3G5Jo1JnpUPVKKxDUmelT/f/rGigpoT/9/ys01JnpUwa2KxIoKaE//fzQiNSZ6VP9/JRg1JnpUPVJoEzUmelTBrWgT/396VHsk6evkrHpUXDub7P9/tmgRORzrl8W2aIhcHOvJ2XpUPVLp68nZelQ9Uunr5Kx6VFw7m+y6umhPNSah7v9/elR7JOnrurpoTzUmMwzkrHpUXDu5CMnZelQ9UgsH/396VHskCwdnOrZoiFyowTVLAIMYZQTBZzq2aHajqME1SwCD5poEwcnZelQ9UorEydl6VP9/+saXxbZoiFyowZfFtmh2o6jBydl6VMGtisT/f3pUg9u5okRFaE/J2dy1GlN6VKLEYKg1JnpUwa25ohpTelSixG8hREVoT8nZGzD/f3pUg9u9GjUmelTBrb0aydl6VD1SisR09WhP/3/KzcnZelT/f/rGydl6VMGtisTJ2XpU/38lGHT1aE//fzQiydl6VD1SaBPJ2XpUwa1oE2c6tmiIXBzr/3+2aBE5HOs1SwCDGGXw6v9/AIMxSvDql8W2aHaj5Jr/f7Zo7cbkmsm0AIPmmt+Y/38Ag82135jJ2XpUwa25orq6aE/J2dy15Kx6VKLEYKj/f3pUg9u5ouSselSixG8hurpoT8nZGzDJ2XpUwa29Gv9/elSD270a//9rKf9/h7OU/aIg/7+DvP/faynrsOq1/79rKdjhh7P/32sp67DCHZT9oiD/v4Qm//9rKf9/Ihr/v2sp2OEiGv//ayn/f4XY/99rKRNPddmU/aIg/z8y3P+/aykmHoXYlP2iIP8/rBX/32spE0/sEP//ayn/f+oO/79rKSYe6g7/P2spJh6F2P8faykTT3XZagKiIP8/MtwAAGsp/3+F2GoCoiD/P6wV/x9rKRNP7BD/P2spJh7qDgAAayn/f+oO/79rKdjhW57/f6Ig//8brf9/aynY4aKi/z9rKdjhW57/f2sp2OGjIv9/oiD//xst/79rKdjhXB7/P2sp2OFcHv8/aynY4YezagKiIP+/g7z/H2sp67DqtQAAayn/f4ez/x9rKeuwwh1qAqIg/7+EJv8/aynY4SIaAABrKf9/Ihr/v2spJh7///9/aykmHv///3+iIAAA////P2spJh7///9/oiAAAAAA/39rKSYeAAD/v2spJh4AAP8/aykmHgAAAABrKf9/h7PKHHI8/38yr/8faynrsOq1ZE5yPNXLMq//P2sp2OGHs/8/aykmHoXYZE5yPCk059b/H2spE0912coccjz/f+fWAABrKf9/hdj/v2sp2OFbnv9/aynY4aKimrFyPNXLMpX/P2sp2OFbnmROcjzVyzKVZE5yPCk0//+asXI8KTT//15aelR4Rv//oKV6VHhG//8043I8/38yr5qxcjzVyzKvQMt6VP9/o62gpXpUhrmjrTTjcjz/fzKv//9rKf9/h7OasXI81csyr//faynrsOq1/79rKdjhh7NkTnI8KTTn1l5aelR4RlnWyhxyPP9/59a+NHpU/39Z1pqxcjwpNOfWNONyPP9/59agpXpUeEZZ1kDLelT/f1nWvjR6VP9/o61eWnpUhrmjrcoccjz/fzKvZE5yPNXLMq//P2spJh7///9/aykmHv//ZE5yPCk0////v2spJh7//5qxcjwpNP///79rKSYehdj/32spE0912ZqxcjwpNOfWNONyPP9/59b//2sp/3+F2GROcjzVyzKVXlp6VIa5BpGasXI81csylaClelSGuQaRL2QnxoyYG5X/f////38EkC2KJ8aIoRuVAVonxgN31uDRdSfGdl7W4P9/////f1zg/3////9/cvXRdSfGdl6Z9c+bJ8ZyZ5n1/3////9/VsvPmyfGcmc3zP2lJ8b7iDfM/aUnxvuIm6QtiifGiKGbpP9/////fw+iAVonxgN377f/f////393ti9kJ8aMmO+3OEREttxx3bsBWifGA3fvtzpMRLY+jOS9L2QnxoyY77c8VES2n6bdu8+bJ8ZyZzfMwqtEtl9Zos79pSfG+4g3zMSzRLbBc+rPxrtEtiKOos48VES2n6ZAny9kJ8aMmBuVIHJEtrGtlKMtiifGiKEblQOQRLbDtECfxrtEtiKO+KrlpUS2c6EQrv2lJ8b7iJukA5BEtsO0+KotiifGiKGbpPtvRLY7SwX23o1Etk1SQPbRdSfGdl6Z9c+bJ8ZyZ5n1wqtEtl9ZBfY4RES23HEq4hlaRLaLXuHiAVonxgN31uD7b0S2O0sq4tF1J8Z2Xtbg+29EtjtLKuIZWkS2i17h4mxOBLI8VPrkOEREttxxKuJsTgSyPFSBEBlaRLaLXrQM+29EtjtLEAs4RES23HEQC8a7RLYijviqkrEEssKrUrblpUS2c6EQrgOQRLbDtPiq5aVEtnOhTx+SsQSywqtTKca7RLYijiEbA5BEtsO0IRvCq0S2X1mizrjDBLL7b6TTxLNEtsFz6s/Gu0S2Io6izsSzRLbBc1YUuMMEsvtvixrCq0S2X1mvEca7RLYijq8RwqtEtl9ZBfbejUS2TVJA9iSSBLI4RO72+29EtjtLBfYkkgSyOESYBd6NRLZNUlEEwqtEtl9ZwwP7b0S2O0vDAwOQRLbDtECf2m0Essa7OK4gckS2sa2UozxURLafpkCfIHJEtrGtuyHabQSyxrutLAOQRLbDtDMdPFREtp+mMx04RES23HHduzpMRLY+jOS9RjwEsgOQocM8VES2n6bdu0Y8BLIDkA8jOkxEtj6MtBo4RES23HEuFzxURLafpi4XyKbiMOKwNtnIpuIw4rA22WOXVxJjl1cSzbMVGs2zFRpWkproFZowzFaSmugVmjDMAAD/fwAA/38AAP9/AAD/fwAA/38AAP9/VHxA7kBuqgNUfEDuQG6qAwWKzesFis3r/oTe6P6E3ugwlAYKH5f+BDCUBgofl/4E4IqSCOCKkgjbnHIO25xyDk2JpQTaik0CTYmlBNqKTQKRiB31co4i45GIHfVyjiLjfJTyGfKZgut8lPIZ8pmC66WEsfalhLH2TYIk9U2CJPVJft7333e1AUl+3vffd7UBqSyqaaksqmmpLKppqSyqaaksqmmpLKppqSyqaaksqmmpLKppqSyqaaksqmmpLKppAAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9//jkAY/45AGP+OQBj/jkAY/45AGP+OQBj/jkAY/45AGP+OQBj/jkAY/45AGP+OQBjepNF4XqTReGFl+PahZfj2senjw4WsJoRaZjvCGmY7wjHp48OlaPdx4WX49pqqau+hZfj2pWj3cePjjfY74iU55mR58/viJTnj4432BqlhhchuJUjGqWGF1PBaikhuJUj/3+K4/9/pdz/f1rv/3+K4/9/Wu////9/////f////3////9/////f7ieehMapYYXuJ56ExqlhhfviJTnOYdB7O+IlOc5h0Hs/39a7/9/Wu//f7vy/3+78v///3////9/////f////39pmO8IaZjvCL2TOQe9kzkHIbiVI2LQ9jJTwWopIbiVI8s4UHDSPWJoiTbfc4k233PHp48OFrCaES6/IBfHp48OVl72W0VaEWdVWFtsVVhbbI+ON9iZkefPIJfPwI+ON9gIJFXe7hhF2qMTVdijE1XY////f////3////9/////fwAA/38AAP9/AAD/fwAA/3+Vo93H9rKbr2qpq76Vo93Hrw/KuJ0X0b0fDIm2HwyJtv9/iuP/f6Xc/38az/9/iuP/fxtP/3+mXP9/imP/f4pjDp+HD16lrxIOn4cPXqWvEoaamwWGmpsFm5WRBJuVkQQ1v9mv2bHJwNvEsKjZscnANb/Zr4aa8cqukqDab54fw66SoNqGmvHKhqvOyIarzsjZscnA2bHJwGCIWNjfiUXRxIySw2CIWNi/LZ3utyES7O8b2ervG9nqYIhY2N+JRdGahXjlYIhY2JqFeOUl0DU/TtfbRDW/2jEl0DU/Nb/aMYaa8cpvnh/DcqUZtYaa8cpeIa7QpxfTyz8Tnsk/E57JpqdhCLmu3wmGmpsFhpqbBaanYQimp2EIua7fCWy8xAymp2EInW5AUhJsSF7aahBk2moQZK6SoNqGj/DgrpKg2oaP8OANtYYa37xvHl6lrxJepa8SDbWGGjW/2a+rzYKd28SwqDW/2a8xC9+jmhAjqOgIEqLoCBKiDbWGGuXKciXfvG8eDbWGGtNLV2iuUKFen0nAbJ9JwGyahXjlmoV45ZCEY+qQhGPqNb/aMTW/2jEwt4YrMLeGKyXQNT984qxNTtfbRCXQNT/gI850JChlbxMiF3cTIhd3GMLnKWLQ9jLFxt4sGMLnKWI6zW3SPWJoATn6bwE5+m/PsN4RUbWEEy6/IBfPsN4RVl72W5hbdGNzWpRmc1qUZt2RLs+Dk6zKIJfPwN2RLs8IJFXeihyX22oZctpqGXLa////f////3////9/////fwAA/38AAP9/AAD/fwAA/3/mqea99rKbr92sObnmqea9MRJiup0X0b0EEAG5BBABuf9/B9z/fxzY/38az/9/B9z/fxtP/38cWP9/B1z/fwdc5qnmvSqiGsrdrDm5KqIayuap5r3dkS7P2o0l2oOTrMrajSXa3ZEuz////3////9/////f////3////9//38W5f9/FuX/f5rp/3+a6eO1KiLjtSoi8q7DHfKuwx3jtSoiGMLnKeO1KiLFxt4sGMLnKdqNJdq9i+rf2o0l2r2L6t/ZpdoN2aXaDROgvQsToL0Lw50L0cOdC9EqohrKKqIayv9/B9z/fxzY/38W5f9/B9z/fxblz7DeEVG1hBPZpdoN2aXaDc+w3hH///9/////f////3////9/5Mo+q1q/TLjkyj6rI4nJ4COJyeB9htLpYJIjAkCaDQNAmg0DjpqIC8Kk9g/CpPYPBridJwa4nSf+qmYe75js02ySbt/vmOzTt6FnxO+Y7NOcpEm/75js07ehZ8TCpPYPR7NDFsKk9g9FuG4YR7NDFn/WG57kyj6rntmTmuTKPqt/1hueIsgBMx3NhzYGuJ0nIsgBMwa4nSdcpnYEzKr6BECaDQNAmg0DXKZ2BBCNZNN0jqHOI4nJ4BCNZNMjicngEI1k03SOoc57kUzEEI1k0+0m6OWUHnbjAhtq4gIbauIiyAEz19ZoPR3NhzYiyAEz5y9FcVwzYWyELjtzhC47c0ezQxbRwgMdRbhuGEezQxaUU01m0lbVXjhSb2k4Um9pXKZ2BMyq+gSttCAGXKZ2BF12yVJNde9b1nTvX9Z0719/1hueL99GlJ7Zk5p/1hueSQZxlJUIeZZlBaeTZQWnk7ehZ8ScpEm/iarQtLehZ8QUG+TGrhRGww0SycENEsnB")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_gntoc")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8vqt6"]
+points = PackedVector3Array(-0.607173, 0.418093, -0.0311306, 0.0470128, 0.309027, 0.695676, -0.025544, 0.309027, 0.695676, -0.025544, 2.30797, 0.0413337, 0.592246, 0.272595, -0.358167, -0.0619399, 0.272595, -0.685473, 0.592246, 0.272595, 0.36837, -0.243684, -0.018173, 0.0413337, -0.607173, 0.309027, 0.36837, -0.607173, 0.272595, -0.358167, 0.33771, 1.61737, -0.103865, -0.0619399, 1.65357, -0.321934, 0.265036, 1.61737, 0.259268, -0.134614, 1.61737, 0.332138, 0.228757, -0.018173, -0.067498, 0.301432, 0.745521, -0.503501, -0.316359, 1.65357, -0.067498, 0.156083, -0.018173, 0.186668, -0.316359, 1.61737, 0.150436, -0.243684, 1.61737, -0.249065, 0.119687, 1.61737, -0.321934, 0.55585, 0.745521, 0.0413337, -0.134614, -0.018173, -0.212968, -0.279963, 0.745521, -0.503501, -0.570777, 0.745521, -0.0311306, 0.0470128, 0.272595, -0.685473, -0.316359, 0.745521, 0.477472, -0.134614, -0.018173, 0.186668, 0.301432, 0.745521, 0.477472, 0.156083, 1.65357, 0.29577, 0.119687, -0.018173, -0.212968, -0.607173, 0.272595, 0.36837)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fylho"]
+points = PackedVector3Array(-0.607173, 0.418093, -0.0311306, 0.0470128, 0.309027, 0.695676, -0.025544, 0.309027, 0.695676, -0.025544, 2.30797, 0.0413337, 0.592246, 0.272595, -0.358167, -0.0619399, 0.272595, -0.685473, 0.592246, 0.272595, 0.36837, -0.243684, -0.018173, 0.0413337, -0.607173, 0.309027, 0.36837, -0.607173, 0.272595, -0.358167, 0.33771, 1.61737, -0.103865, -0.0619399, 1.65357, -0.321934, 0.265036, 1.61737, 0.259268, -0.134614, 1.61737, 0.332138, 0.228757, -0.018173, -0.067498, 0.301432, 0.745521, -0.503501, -0.316359, 1.65357, -0.067498, 0.156083, -0.018173, 0.186668, -0.316359, 1.61737, 0.150436, -0.243684, 1.61737, -0.249065, 0.119687, 1.61737, -0.321934, 0.55585, 0.745521, 0.0413337, -0.134614, -0.018173, -0.212968, -0.279963, 0.745521, -0.503501, -0.570777, 0.745521, -0.0311306, 0.0470128, 0.272595, -0.685473, -0.316359, 0.745521, 0.477472, -0.134614, -0.018173, 0.186668, 0.301432, 0.745521, 0.477472, 0.156083, 1.65357, 0.29577, 0.119687, -0.018173, -0.212968, -0.607173, 0.272595, 0.36837)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hurbd"]
+points = PackedVector3Array(-0.607173, 0.418093, -0.0311306, 0.0470128, 0.309027, 0.695676, -0.025544, 0.309027, 0.695676, -0.025544, 2.30797, 0.0413337, 0.592246, 0.272595, -0.358167, -0.0619399, 0.272595, -0.685473, 0.592246, 0.272595, 0.36837, -0.243684, -0.018173, 0.0413337, -0.607173, 0.309027, 0.36837, -0.607173, 0.272595, -0.358167, 0.33771, 1.61737, -0.103865, -0.0619399, 1.65357, -0.321934, 0.265036, 1.61737, 0.259268, -0.134614, 1.61737, 0.332138, 0.228757, -0.018173, -0.067498, 0.301432, 0.745521, -0.503501, -0.316359, 1.65357, -0.067498, 0.156083, -0.018173, 0.186668, -0.316359, 1.61737, 0.150436, -0.243684, 1.61737, -0.249065, 0.119687, 1.61737, -0.321934, 0.55585, 0.745521, 0.0413337, -0.134614, -0.018173, -0.212968, -0.279963, 0.745521, -0.503501, -0.570777, 0.745521, -0.0311306, 0.0470128, 0.272595, -0.685473, -0.316359, 0.745521, 0.477472, -0.134614, -0.018173, 0.186668, 0.301432, 0.745521, 0.477472, 0.156083, 1.65357, 0.29577, 0.119687, -0.018173, -0.212968, -0.607173, 0.272595, 0.36837)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oreju"]
+points = PackedVector3Array(-0.607173, 0.418093, -0.0311306, 0.0470128, 0.309027, 0.695676, -0.025544, 0.309027, 0.695676, -0.025544, 2.30797, 0.0413337, 0.592246, 0.272595, -0.358167, -0.0619399, 0.272595, -0.685473, 0.592246, 0.272595, 0.36837, -0.243684, -0.018173, 0.0413337, -0.607173, 0.309027, 0.36837, -0.607173, 0.272595, -0.358167, 0.33771, 1.61737, -0.103865, -0.0619399, 1.65357, -0.321934, 0.265036, 1.61737, 0.259268, -0.134614, 1.61737, 0.332138, 0.228757, -0.018173, -0.067498, 0.301432, 0.745521, -0.503501, -0.316359, 1.65357, -0.067498, 0.156083, -0.018173, 0.186668, -0.316359, 1.61737, 0.150436, -0.243684, 1.61737, -0.249065, 0.119687, 1.61737, -0.321934, 0.55585, 0.745521, 0.0413337, -0.134614, -0.018173, -0.212968, -0.279963, 0.745521, -0.503501, -0.570777, 0.745521, -0.0311306, 0.0470128, 0.272595, -0.685473, -0.316359, 0.745521, 0.477472, -0.134614, -0.018173, 0.186668, 0.301432, 0.745521, 0.477472, 0.156083, 1.65357, 0.29577, 0.119687, -0.018173, -0.212968, -0.607173, 0.272595, 0.36837)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oetjs"]
+points = PackedVector3Array(-0.607173, 0.418093, -0.0311306, 0.0470128, 0.309027, 0.695676, -0.025544, 0.309027, 0.695676, -0.025544, 2.30797, 0.0413337, 0.592246, 0.272595, -0.358167, -0.0619399, 0.272595, -0.685473, 0.592246, 0.272595, 0.36837, -0.243684, -0.018173, 0.0413337, -0.607173, 0.309027, 0.36837, -0.607173, 0.272595, -0.358167, 0.33771, 1.61737, -0.103865, -0.0619399, 1.65357, -0.321934, 0.265036, 1.61737, 0.259268, -0.134614, 1.61737, 0.332138, 0.228757, -0.018173, -0.067498, 0.301432, 0.745521, -0.503501, -0.316359, 1.65357, -0.067498, 0.156083, -0.018173, 0.186668, -0.316359, 1.61737, 0.150436, -0.243684, 1.61737, -0.249065, 0.119687, 1.61737, -0.321934, 0.55585, 0.745521, 0.0413337, -0.134614, -0.018173, -0.212968, -0.279963, 0.745521, -0.503501, -0.570777, 0.745521, -0.0311306, 0.0470128, 0.272595, -0.685473, -0.316359, 0.745521, 0.477472, -0.134614, -0.018173, 0.186668, 0.301432, 0.745521, 0.477472, 0.156083, 1.65357, 0.29577, 0.119687, -0.018173, -0.212968, -0.607173, 0.272595, 0.36837)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t5y8x"]
+points = PackedVector3Array(-0.607173, 0.418093, -0.0311306, 0.0470128, 0.309027, 0.695676, -0.025544, 0.309027, 0.695676, -0.025544, 2.30797, 0.0413337, 0.592246, 0.272595, -0.358167, -0.0619399, 0.272595, -0.685473, 0.592246, 0.272595, 0.36837, -0.243684, -0.018173, 0.0413337, -0.607173, 0.309027, 0.36837, -0.607173, 0.272595, -0.358167, 0.33771, 1.61737, -0.103865, -0.0619399, 1.65357, -0.321934, 0.265036, 1.61737, 0.259268, -0.134614, 1.61737, 0.332138, 0.228757, -0.018173, -0.067498, 0.301432, 0.745521, -0.503501, -0.316359, 1.65357, -0.067498, 0.156083, -0.018173, 0.186668, -0.316359, 1.61737, 0.150436, -0.243684, 1.61737, -0.249065, 0.119687, 1.61737, -0.321934, 0.55585, 0.745521, 0.0413337, -0.134614, -0.018173, -0.212968, -0.279963, 0.745521, -0.503501, -0.570777, 0.745521, -0.0311306, 0.0470128, 0.272595, -0.685473, -0.316359, 0.745521, 0.477472, -0.134614, -0.018173, 0.186668, 0.301432, 0.745521, 0.477472, 0.156083, 1.65357, 0.29577, 0.119687, -0.018173, -0.212968, -0.607173, 0.272595, 0.36837)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eol33"]
+points = PackedVector3Array(-0.607173, 0.418093, -0.0311306, 0.0470128, 0.309027, 0.695676, -0.025544, 0.309027, 0.695676, -0.025544, 2.30797, 0.0413337, 0.592246, 0.272595, -0.358167, -0.0619399, 0.272595, -0.685473, 0.592246, 0.272595, 0.36837, -0.243684, -0.018173, 0.0413337, -0.607173, 0.309027, 0.36837, -0.607173, 0.272595, -0.358167, 0.33771, 1.61737, -0.103865, -0.0619399, 1.65357, -0.321934, 0.265036, 1.61737, 0.259268, -0.134614, 1.61737, 0.332138, 0.228757, -0.018173, -0.067498, 0.301432, 0.745521, -0.503501, -0.316359, 1.65357, -0.067498, 0.156083, -0.018173, 0.186668, -0.316359, 1.61737, 0.150436, -0.243684, 1.61737, -0.249065, 0.119687, 1.61737, -0.321934, 0.55585, 0.745521, 0.0413337, -0.134614, -0.018173, -0.212968, -0.279963, 0.745521, -0.503501, -0.570777, 0.745521, -0.0311306, 0.0470128, 0.272595, -0.685473, -0.316359, 0.745521, 0.477472, -0.134614, -0.018173, 0.186668, 0.301432, 0.745521, 0.477472, 0.156083, 1.65357, 0.29577, 0.119687, -0.018173, -0.212968, -0.607173, 0.272595, 0.36837)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wsrgd"]
+points = PackedVector3Array(-0.607173, 0.418093, -0.0311306, 0.0470128, 0.309027, 0.695676, -0.025544, 0.309027, 0.695676, -0.025544, 2.30797, 0.0413337, 0.592246, 0.272595, -0.358167, -0.0619399, 0.272595, -0.685473, 0.592246, 0.272595, 0.36837, -0.243684, -0.018173, 0.0413337, -0.607173, 0.309027, 0.36837, -0.607173, 0.272595, -0.358167, 0.33771, 1.61737, -0.103865, -0.0619399, 1.65357, -0.321934, 0.265036, 1.61737, 0.259268, -0.134614, 1.61737, 0.332138, 0.228757, -0.018173, -0.067498, 0.301432, 0.745521, -0.503501, -0.316359, 1.65357, -0.067498, 0.156083, -0.018173, 0.186668, -0.316359, 1.61737, 0.150436, -0.243684, 1.61737, -0.249065, 0.119687, 1.61737, -0.321934, 0.55585, 0.745521, 0.0413337, -0.134614, -0.018173, -0.212968, -0.279963, 0.745521, -0.503501, -0.570777, 0.745521, -0.0311306, 0.0470128, 0.272595, -0.685473, -0.316359, 0.745521, 0.477472, -0.134614, -0.018173, 0.186668, 0.301432, 0.745521, 0.477472, 0.156083, 1.65357, 0.29577, 0.119687, -0.018173, -0.212968, -0.607173, 0.272595, 0.36837)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3jmro"]
+points = PackedVector3Array(-0.607173, 0.418093, -0.0311306, 0.0470128, 0.309027, 0.695676, -0.025544, 0.309027, 0.695676, -0.025544, 2.30797, 0.0413337, 0.592246, 0.272595, -0.358167, -0.0619399, 0.272595, -0.685473, 0.592246, 0.272595, 0.36837, -0.243684, -0.018173, 0.0413337, -0.607173, 0.309027, 0.36837, -0.607173, 0.272595, -0.358167, 0.33771, 1.61737, -0.103865, -0.0619399, 1.65357, -0.321934, 0.265036, 1.61737, 0.259268, -0.134614, 1.61737, 0.332138, 0.228757, -0.018173, -0.067498, 0.301432, 0.745521, -0.503501, -0.316359, 1.65357, -0.067498, 0.156083, -0.018173, 0.186668, -0.316359, 1.61737, 0.150436, -0.243684, 1.61737, -0.249065, 0.119687, 1.61737, -0.321934, 0.55585, 0.745521, 0.0413337, -0.134614, -0.018173, -0.212968, -0.279963, 0.745521, -0.503501, -0.570777, 0.745521, -0.0311306, 0.0470128, 0.272595, -0.685473, -0.316359, 0.745521, 0.477472, -0.134614, -0.018173, 0.186668, 0.301432, 0.745521, 0.477472, 0.156083, 1.65357, 0.29577, 0.119687, -0.018173, -0.212968, -0.607173, 0.272595, 0.36837)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1g1sy"]
+points = PackedVector3Array(-0.607173, 0.418093, -0.0311306, 0.0470128, 0.309027, 0.695676, -0.025544, 0.309027, 0.695676, -0.025544, 2.30797, 0.0413337, 0.592246, 0.272595, -0.358167, -0.0619399, 0.272595, -0.685473, 0.592246, 0.272595, 0.36837, -0.243684, -0.018173, 0.0413337, -0.607173, 0.309027, 0.36837, -0.607173, 0.272595, -0.358167, 0.33771, 1.61737, -0.103865, -0.0619399, 1.65357, -0.321934, 0.265036, 1.61737, 0.259268, -0.134614, 1.61737, 0.332138, 0.228757, -0.018173, -0.067498, 0.301432, 0.745521, -0.503501, -0.316359, 1.65357, -0.067498, 0.156083, -0.018173, 0.186668, -0.316359, 1.61737, 0.150436, -0.243684, 1.61737, -0.249065, 0.119687, 1.61737, -0.321934, 0.55585, 0.745521, 0.0413337, -0.134614, -0.018173, -0.212968, -0.279963, 0.745521, -0.503501, -0.570777, 0.745521, -0.0311306, 0.0470128, 0.272595, -0.685473, -0.316359, 0.745521, 0.477472, -0.134614, -0.018173, 0.186668, 0.301432, 0.745521, 0.477472, 0.156083, 1.65357, 0.29577, 0.119687, -0.018173, -0.212968, -0.607173, 0.272595, 0.36837)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kb3gn"]
 resource_name = "colormap"
@@ -4491,35 +4559,125 @@ transform = Transform3D(0.397133, 0, -10.9928, 0, 11, 0, 10.9928, 0, 0.397133, -
 
 [node name="decor" type="Node3D" parent="map"]
 
-[node name="pine2" parent="map/decor" instance=ExtResource("4_tlcuo")]
+[node name="pine2" type="Node3D" parent="map/decor"]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -54.6169, 4.29153e-06, 56.2365)
 
-[node name="pine3" parent="map/decor" instance=ExtResource("4_tlcuo")]
+[node name="pine" type="MeshInstance3D" parent="map/decor/pine2"]
+mesh = SubResource("ArrayMesh_ucl6v")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/decor/pine2/pine"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/decor/pine2/pine/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_8vqt6")
+
+[node name="pine3" type="Node3D" parent="map/decor"]
 transform = Transform3D(3.66477, 0, 4.75073, 0, 6, 0, -4.75073, 0, 3.66477, -67.6378, 4.29153e-06, 36.8561)
 
-[node name="pine5" parent="map/decor" instance=ExtResource("4_tlcuo")]
+[node name="pine" type="MeshInstance3D" parent="map/decor/pine3"]
+mesh = SubResource("ArrayMesh_ucl6v")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/decor/pine3/pine"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/decor/pine3/pine/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_fylho")
+
+[node name="pine5" type="Node3D" parent="map/decor"]
 transform = Transform3D(3.66477, 0, 4.75073, 0, 6, 0, -4.75073, 0, 3.66477, -46.1405, 4.29153e-06, 44.4526)
 
-[node name="pine6" parent="map/decor" instance=ExtResource("4_tlcuo")]
+[node name="pine" type="MeshInstance3D" parent="map/decor/pine5"]
+mesh = SubResource("ArrayMesh_ucl6v")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/decor/pine5/pine"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/decor/pine5/pine/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_hurbd")
+
+[node name="pine6" type="Node3D" parent="map/decor"]
 transform = Transform3D(3.66477, 0, 4.75073, 0, 6, 0, -4.75073, 0, 3.66477, -28.9447, 4.29153e-06, 67.3633)
 
-[node name="pine7" parent="map/decor" instance=ExtResource("4_tlcuo")]
+[node name="pine" type="MeshInstance3D" parent="map/decor/pine6"]
+mesh = SubResource("ArrayMesh_ucl6v")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/decor/pine6/pine"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/decor/pine6/pine/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_oreju")
+
+[node name="pine7" type="Node3D" parent="map/decor"]
 transform = Transform3D(3.66477, 0, 4.75073, 0, 6, 0, -4.75073, 0, 3.66477, -70.4185, 4.29153e-06, 52.4985)
 
-[node name="pine8" parent="map/decor" instance=ExtResource("4_tlcuo")]
+[node name="pine" type="MeshInstance3D" parent="map/decor/pine7"]
+mesh = SubResource("ArrayMesh_ucl6v")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/decor/pine7/pine"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/decor/pine7/pine/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_oetjs")
+
+[node name="pine8" type="Node3D" parent="map/decor"]
 transform = Transform3D(5.57549, 0, -2.21673, 0, 6, 0, 2.21673, 0, 5.57549, -56.2984, 4.29153e-06, 27.8652)
 
-[node name="pine9" parent="map/decor" instance=ExtResource("4_tlcuo")]
+[node name="pine" type="MeshInstance3D" parent="map/decor/pine8"]
+mesh = SubResource("ArrayMesh_ucl6v")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/decor/pine8/pine"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/decor/pine8/pine/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_t5y8x")
+
+[node name="pine9" type="Node3D" parent="map/decor"]
 transform = Transform3D(5.16066, 0, 3.06065, 0, 6, 0, -3.06065, 0, 5.16066, -61.2378, 4.29153e-06, 5.04532)
 
-[node name="pine10" parent="map/decor" instance=ExtResource("4_tlcuo")]
+[node name="pine" type="MeshInstance3D" parent="map/decor/pine9"]
+mesh = SubResource("ArrayMesh_ucl6v")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/decor/pine9/pine"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/decor/pine9/pine/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_eol33")
+
+[node name="pine10" type="Node3D" parent="map/decor"]
 transform = Transform3D(5.16066, 0, 3.06065, 0, 6, 0, -3.06065, 0, 5.16066, -44.068, 4.29153e-06, 20.0466)
 
-[node name="pine11" parent="map/decor" instance=ExtResource("4_tlcuo")]
+[node name="pine" type="MeshInstance3D" parent="map/decor/pine10"]
+mesh = SubResource("ArrayMesh_ucl6v")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/decor/pine10/pine"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/decor/pine10/pine/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_wsrgd")
+
+[node name="pine11" type="Node3D" parent="map/decor"]
 transform = Transform3D(5.16066, 0, 3.06065, 0, 6, 0, -3.06065, 0, 5.16066, -36.5533, 4.29153e-06, 47.6895)
 
-[node name="pine12" parent="map/decor" instance=ExtResource("4_tlcuo")]
+[node name="pine" type="MeshInstance3D" parent="map/decor/pine11"]
+mesh = SubResource("ArrayMesh_ucl6v")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/decor/pine11/pine"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/decor/pine11/pine/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3jmro")
+
+[node name="pine12" type="Node3D" parent="map/decor"]
 transform = Transform3D(5.16066, 0, 3.06065, 0, 6, 0, -3.06065, 0, 5.16066, -69.6009, 4.29153e-06, 18.5537)
+
+[node name="pine" type="MeshInstance3D" parent="map/decor/pine12"]
+mesh = SubResource("ArrayMesh_ucl6v")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/decor/pine12/pine"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/decor/pine12/pine/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_1g1sy")
 
 [node name="pine13" parent="map/decor" instance=ExtResource("4_tlcuo")]
 transform = Transform3D(3.73302, 0, -3.32635, 0, 5, 0, 3.32635, 0, 3.73302, -54.5195, 4.29153e-06, 36.5913)
@@ -4540,7 +4698,7 @@ transform = Transform3D(4.91387, 0, 0.924045, 0, 5, 0, -0.924045, 0, 4.91387, -6
 transform = Transform3D(1.2402, 0, -5.87043, 0, 6, 0, 5.87043, 0, 1.2402, -28.3952, 4.29153e-06, 32.5614)
 
 [node name="pine19" parent="map/decor" instance=ExtResource("4_tlcuo")]
-transform = Transform3D(5.40564, 0, -2.60365, 0, 6, 0, 2.60365, 0, 5.40564, -12.1247, 4.29153e-06, 15.8158)
+transform = Transform3D(5.40564, 0, -2.60365, -0.0448947, 5.99911, -0.0932094, 2.60326, 0.103458, 5.40484, -9.26057, 4.29153e-06, 13.1755)
 
 [node name="pine20" parent="map/decor" instance=ExtResource("4_tlcuo")]
 transform = Transform3D(5.40564, 0, -2.60365, 0, 6, 0, 2.60365, 0, 5.40564, -15.1136, 4.29153e-06, 38.419)
@@ -4588,10 +4746,10 @@ transform = Transform3D(3.16136, 0, 3.87373, 0, 5, 0, -3.87373, 0, 3.16136, 9.36
 transform = Transform3D(-0.175108, 0, 4.99693, 0, 5, 0, -4.99693, 0, -0.175108, 21.3233, 3.8147e-06, 40.0348)
 
 [node name="pine-crooked13" parent="map/decor" instance=ExtResource("5_7n3ij")]
-transform = Transform3D(-0.175108, 0, 4.99693, 0, 5, 0, -4.99693, 0, -0.175108, 11.3879, 3.8147e-06, 29.8021)
+transform = Transform3D(-0.175108, 0, 4.99693, 0, 5, 0, -4.99693, 0, -0.175108, 9.70331, 3.8147e-06, 24.6697)
 
 [node name="pine-crooked14" parent="map/decor" instance=ExtResource("5_7n3ij")]
-transform = Transform3D(-0.175108, 0, 4.99693, 0, 5, 0, -4.99693, 0, -0.175108, 24.6912, 3.8147e-06, 28.7284)
+transform = Transform3D(-0.175108, 0, 4.99693, 0, 5, 0, -4.99693, 0, -0.175108, 24.6912, 3.8147e-06, 25.6601)
 
 [node name="pine-crooked15" parent="map/decor" instance=ExtResource("5_7n3ij")]
 transform = Transform3D(4.8299, 0, -1.29308, 0, 5, 0, 1.29308, 0, 4.8299, 43.7523, 3.8147e-06, -26.4208)
@@ -5283,12 +5441,1395 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence21/iron-fence/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_ijs4c")
 
+[node name="iron-fence24" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 8.07086, 0, 5.88455)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence24"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence24/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence24/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence26" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7.97558, 0, 7.78418)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence26"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence26/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence26/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence28" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.03691, 0, 7.78418)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence28"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence28/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence28/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence29" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.04079, 0, 5.85007)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence29"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence29/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence29/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence30" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.09414, 0, 5.85007)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence30"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence30/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence30/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence31" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.09414, 0, 7.77917)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence31"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence31/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence31/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence32" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.13785, 0, 5.85007)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence32"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence32/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence32/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence33" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.13785, 0, 7.77917)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence33"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence33/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence33/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence34" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.18984, 0, 5.85007)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence34"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence34/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence34/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence35" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.18984, 0, 7.77917)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence35"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence35/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence35/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence36" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.76731, 0, 5.85007)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence36"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence36/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence36/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence37" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.76731, 0, 7.77917)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence37"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence37/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence37/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence38" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3.65556, 0, 3.96357)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence38"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence38/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence38/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence39" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -5.58465, 0, 3.96357)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence39"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence39/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence39/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence40" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3.65556, 0, 7.8672)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence40"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence40/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence40/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence41" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -5.58465, 0, 7.8672)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence41"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence41/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence41/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence42" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3.65556, 0, 9.83925)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence42"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence42/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence42/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence43" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -5.58465, 0, 9.83925)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence43"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence43/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence43/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence44" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3.65556, 0, 11.8162)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence44"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence44/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence44/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence45" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -5.58465, 0, 11.8162)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence45"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence45/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence45/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence46" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3.65556, 0, 13.8221)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence46"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence46/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence46/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence47" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -5.58465, 0, 13.8221)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence47"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence47/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence47/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence48" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3.65556, 0, 15.8129)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence48"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence48/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence48/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence49" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -5.58465, 0, 15.8129)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence49"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence49/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence49/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence50" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3.65556, 0, 17.8077)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence50"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence50/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence50/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence51" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -5.58465, 0, 17.8077)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence51"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence51/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence51/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence52" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3.65556, 0, 2.00689)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence52"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence52/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence52/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence53" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -5.58465, 0, 2.00689)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence53"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence53/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence53/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence55" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3.65556, 0, -0.0188656)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence55"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence55/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence55/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence56" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -5.58465, 0, -0.0188656)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence56"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence56/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence56/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence57" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.6866, 0, -2.0343)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence57"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence57/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence57/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence58" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.6866, 0, -0.105206)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence58"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence58/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence58/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence62" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.77639, 0, 19.7034)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence62"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence62/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence62/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence63" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.77639, 0, 21.6325)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence63"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence63/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence63/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence2" type="MeshInstance3D" parent="map/Maze2/iron-fence63"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987368, 0, 0)
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence63/iron-fence2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence63/iron-fence2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence3" type="MeshInstance3D" parent="map/Maze2/iron-fence63"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.01013, 0, -0.948662)
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence63/iron-fence3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence63/iron-fence3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence64" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.16552, 0, 19.7034)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence64"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence64/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence64/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence65" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.16552, 0, 21.6325)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence65"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence65/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence65/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence66" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.16459, 0, 19.7034)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence66"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence66/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence66/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence67" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.16459, 0, 21.6325)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence67"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence67/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence67/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence68" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.13025, 0, 19.7034)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence68"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence68/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence68/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence69" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.13025, 0, 21.6325)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence69"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence69/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence69/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence70" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.08387, 0, 19.7034)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence70"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence70/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence70/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence71" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.08387, 0, 21.6325)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence71"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence71/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence71/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence72" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 8.05796, 0, 19.7034)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence72"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence72/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence72/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence73" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 8.05796, 0, 21.6325)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence73"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence73/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence73/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence74" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 10.077, 0, 21.7084)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence74"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence74/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence74/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence2" type="MeshInstance3D" parent="map/Maze2/iron-fence74"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00021, 0, 0)
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence74/iron-fence2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence74/iron-fence2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence3" type="MeshInstance3D" parent="map/Maze2/iron-fence74"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.00021, 0, 0)
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence74/iron-fence3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence74/iron-fence3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence75" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 8.14793, 0, 21.7084)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence75"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence75/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence75/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence76" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 10.077, 0, 23.6957)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence76"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence76/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence76/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence77" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 8.14793, 0, 23.6957)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence77"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence77/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence77/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence78" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 10.077, 0, 25.6869)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence78"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence78/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence78/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence79" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 8.14793, 0, 25.6869)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence79"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence79/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence79/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence80" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 10.077, 0, 27.6635)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence80"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence80/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence80/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence81" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 8.14793, 0, 27.6635)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence81"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence81/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence81/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence82" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 10.077, 0, 29.5492)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence82"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence82/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence82/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence83" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 8.14793, 0, 29.5492)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence83"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence83/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence83/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence84" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 10.077, 0, 31.4992)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence84"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence84/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence84/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence85" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 8.14793, 0, 31.4992)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence85"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence85/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence85/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence86" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 1.74846e-07, 0, 2, 0, -1.74846e-07, 0, -2, 8.05921, 0, 33.5356)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence86"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence86/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence86/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence87" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 1.74846e-07, 0, 2, 0, -1.74846e-07, 0, -2, 8.05921, 0, 31.6066)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence87"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence87/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence87/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence88" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 1.74846e-07, 0, 2, 0, -1.74846e-07, 0, -2, 11.9622, 0, 33.5337)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence88"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence88/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence88/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence89" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 1.74846e-07, 0, 2, 0, -1.74846e-07, 0, -2, 11.9622, 0, 31.6046)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence89"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence89/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence89/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence90" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2.62268e-07, 0, 2, 0, 2, 0, -2, 0, 2.62268e-07, 9.93934, 0, 35.4192)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence90"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence90/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence90/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence91" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2.62268e-07, 0, 2, 0, 2, 0, -2, 0, 2.62268e-07, 11.8684, 0, 35.4192)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence91"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence91/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence91/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence92" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2.62268e-07, 0, 2, 0, 2, 0, -2, 0, 2.62268e-07, 13.9346, 0, 35.4192)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence92"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence92/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence92/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence93" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2.62268e-07, 0, 2, 0, 2, 0, -2, 0, 2.62268e-07, 15.8637, 0, 35.4192)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence93"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence93/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence93/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence94" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2.62268e-07, 0, 2, 0, 2, 0, -2, 0, 2.62268e-07, 13.9346, 0, 37.4151)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence94"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence94/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence94/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence95" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2.62268e-07, 0, 2, 0, 2, 0, -2, 0, 2.62268e-07, 15.8637, 0, 37.4151)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence95"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence95/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence95/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence96" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 15.9513, 0, 39.4493)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence96"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence96/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence96/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence97" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 15.9513, 0, 37.5202)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence97"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence97/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence97/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence110" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 12.0595, 0, 39.4493)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence110"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence110/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence110/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence111" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 12.0595, 0, 37.5202)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence111"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence111/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence111/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence112" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2.96039e-07, 0, 2, 0, 2, 0, -2, 0, 2.96039e-07, 9.93133, 0, 37.3801)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence112"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence112/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence112/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence113" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2.96039e-07, 0, 2, 0, 2, 0, -2, 0, 2.96039e-07, 11.8604, 0, 37.3801)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence113"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence113/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence113/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence114" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2.96039e-07, 0, 2, 0, 2, 0, -2, 0, 2.96039e-07, 9.93133, 0, 39.3872)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence114"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence114/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence114/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence115" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2.96039e-07, 0, 2, 0, 2, 0, -2, 0, 2.96039e-07, 11.8604, 0, 39.3872)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence115"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence115/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence115/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence116" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, -3.83462e-07, 0, 2, 0, 3.83462e-07, 0, 2, 9.98885, 0, 39.2972)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence116"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence116/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence116/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence117" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, -3.83462e-07, 0, 2, 0, 3.83462e-07, 0, 2, 9.98885, 0, 41.2262)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence117"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence117/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence117/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence118" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, -3.83462e-07, 0, 2, 0, 3.83462e-07, 0, 2, 15.9438, 0, 33.4147)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence118"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence118/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence118/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence119" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, -3.83462e-07, 0, 2, 0, 3.83462e-07, 0, 2, 15.9438, 0, 35.3438)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence119"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence119/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence119/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence121" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, -3.83462e-07, 0, 2, 0, 3.83462e-07, 0, 2, 13.9664, 0, 41.2496)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence121"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence121/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence121/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence98" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 17.9223, 0, 39.4493)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence98"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence98/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence98/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence99" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 17.9223, 0, 37.5202)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence99"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence99/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence99/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence100" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 19.8895, 0, 39.4493)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence100"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence100/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence100/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence101" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 19.8895, 0, 37.5202)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence101"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence101/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence101/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence102" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 21.8868, 0, 39.4493)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence102"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence102/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence102/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence103" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 21.8868, 0, 37.5202)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence103"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence103/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence103/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence104" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 23.8375, 0, 39.4493)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence104"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence104/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence104/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence105" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 23.8375, 0, 37.5202)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence105"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence105/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence105/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence106" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 25.8062, 0, 39.4493)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence106"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence106/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence106/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence107" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 25.8062, 0, 37.5202)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence107"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence107/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence107/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence108" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 27.781, 0, 39.4493)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence108"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence108/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence108/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence109" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 27.781, 0, 37.5202)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence109"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence109/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence109/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence120" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 6.12312, 0, 33.5342)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence120"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence120/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence120/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence122" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-2, 0, 2.08616e-07, 0, 2, 0, -2.08616e-07, 0, -2, 6.12312, 0, 31.6051)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence122"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence122/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence122/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence123" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2.96039e-07, 0, 2, 0, 2, 0, -2, 0, 2.96039e-07, 6.03341, 0, 33.4458)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence123"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence123/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence123/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence124" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2.96039e-07, 0, 2, 0, 2, 0, -2, 0, 2.96039e-07, 17.8314, 0, 33.4458)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence124"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence124/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence124/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence125" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, -3.83462e-07, 0, 2, 0, 3.83462e-07, 0, 2, 13.9949, 0, 33.4112)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence125"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence125/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence125/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence59" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -7.56434, 0, -1.99627)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence59"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence59/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence59/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence60" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3.64535, 0, -1.99627)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence60"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence60/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence60/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence61" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.74983, 0, -2.03735)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence61"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence61/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence61/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
+[node name="iron-fence54" type="Node3D" parent="map/Maze2"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -5.58465, 0, 5.9352)
+
+[node name="iron-fence" type="MeshInstance3D" parent="map/Maze2/iron-fence54"]
+mesh = SubResource("ArrayMesh_0ijfu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ttn4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Maze2/iron-fence54/iron-fence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Maze2/iron-fence54/iron-fence/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ijs4c")
+
 [node name="Lighting" type="Node3D" parent="map"]
 
 [node name="lightpost-double2" parent="map/Lighting" instance=ExtResource("6_qxksp")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -54.2871, 0, -60.0545)
+transform = Transform3D(1.28076, 0, 1.53612, 0, 2, 0, -1.53612, 0, 1.28076, -54.4552, 0, -62.4305)
+
+[node name="lightpost-double3" parent="map/Lighting" instance=ExtResource("6_qxksp")]
+transform = Transform3D(1.28076, 0, 1.53612, 0, 2, 0, -1.53612, 0, 1.28076, -36.036, 0, -65.555)
+
+[node name="lightpost-double4" parent="map/Lighting" instance=ExtResource("6_qxksp")]
+transform = Transform3D(1.28076, 0, 1.53612, 0, 2, 0, -1.53612, 0, 1.28076, -32.7856, 0, -76.7764)
+
+[node name="lightpost-double5" parent="map/Lighting" instance=ExtResource("6_qxksp")]
+transform = Transform3D(1.99999, 0, 0.00628328, 0, 2, 0, -0.00628328, 0, 1.99999, -29.2854, 0, -63.1432)
+
+[node name="lightpost-double6" parent="map/Lighting" instance=ExtResource("6_qxksp")]
+transform = Transform3D(1.99999, 0, 0.00628328, 0, 2, 0, -0.00628328, 0, 1.99999, -38.9066, 0, -51.1271)
+
+[node name="lightpost-double7" parent="map/Lighting" instance=ExtResource("6_qxksp")]
+transform = Transform3D(1.99999, 0, 0.00628328, 0, 2, 0, -0.00628328, 0, 1.99999, -17.6919, 0, -51.1271)
+
+[node name="lightpost-double8" parent="map/Lighting" instance=ExtResource("6_qxksp")]
+transform = Transform3D(1.99999, 0, 0.00628328, 0, 2, 0, -0.00628328, 0, 1.99999, -20.6387, 0, -35.1418)
+
+[node name="lightpost-double9" parent="map/Lighting" instance=ExtResource("6_qxksp")]
+transform = Transform3D(1.99999, 0, 0.00628328, 0, 2, 0, -0.00628328, 0, 1.99999, -46.7068, 0, -35.0898)
+
+[node name="lightpost-double10" parent="map/Lighting" instance=ExtResource("6_qxksp")]
+transform = Transform3D(1.99999, 0, 0.00628328, 0, 2, 0, -0.00628328, 0, 1.99999, -50.6058, 0, -52.0257)
+
+[node name="lightpost-double11" parent="map/Lighting" instance=ExtResource("6_qxksp")]
+transform = Transform3D(1.99999, 0, 0.00628328, 0, 2, 0, -0.00628328, 0, 1.99999, -46.3991, 0.270477, -7.00698)
+
+[node name="lightpost-double12" parent="map/Lighting" instance=ExtResource("6_qxksp")]
+transform = Transform3D(1.99999, 0, 0.00628328, 0, 2, 0, -0.00628328, 0, 1.99999, -17.5315, 0.270477, -8.68354)
+
+[node name="lightpost-double13" parent="map/Lighting" instance=ExtResource("6_qxksp")]
+transform = Transform3D(-0.00628337, 0, 1.99999, 0, 2, 0, -1.99999, 0, -0.00628337, -18.0826, 0.270477, 27.7491)
+
+[node name="lightpost-double14" parent="map/Lighting" instance=ExtResource("6_qxksp")]
+transform = Transform3D(1.99293, 0, -0.168051, 0, 2, 0, 0.168051, 0, 1.99293, -27.1292, 0.270477, 19.664)
+
+[node name="lightpost-double15" parent="map/Lighting" instance=ExtResource("6_qxksp")]
+transform = Transform3D(1.99293, 0, -0.168051, 0, 2, 0, 0.168051, 0, 1.99293, -5.70007, 0.270477, 19.664)
 
 [node name="Player" parent="." instance=ExtResource("5_ksxuw")]
-transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 31.6759, 0, 27.8143)
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -53.4523, 0, -66.6289)
 sens_horizontal = 0.3
 sens_vertical = 0.3
