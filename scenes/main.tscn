@@ -69,7 +69,7 @@ points = PackedVector3Array(0.436077, 0, -0.344534, -0.285591, 0.833333, -0.2957
 [node name="world" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.645658, -0.352893, -0.677194, -0.679766, 0.669646, 0.299151, 0.347912, 0.653483, -0.672248, 0, 0, -0.0124435)
+transform = Transform3D(-0.590651, -0.273595, -0.759129, -0.690197, 0.658675, 0.299626, 0.418043, 0.700923, -0.577881, 0, 0, -0.0124435)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -78,7 +78,7 @@ environment = SubResource("Environment_dxgmc")
 [node name="map" type="Node3D" parent="."]
 
 [node name="house" parent="map" instance=ExtResource("6_mljf0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.02324, 0, -0.606763)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 37.1723, 0, 29.7503)
 
 [node name="floor" type="CSGBox3D" parent="map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -4570,5 +4570,6 @@ transform = Transform3D(-0.175108, 0, 4.99693, 0, 5, 0, -4.99693, 0, -0.175108, 
 transform = Transform3D(-3.98207, 0, 3.02376, 0, 5, 0, -3.02376, 0, -3.98207, -17.9329, 3.8147e-06, -17.7227)
 
 [node name="Player" parent="." instance=ExtResource("5_ksxuw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -53.6, 0, -62.1163)
 sens_horizontal = 0.3
 sens_vertical = 0.3
