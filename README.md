@@ -2,6 +2,7 @@ Game Demo for a 3rd Person game
 
 Intructions:
 You will have to  download the exe file off github to accsess and run the game. to close the game you will have to alt f4.
+the exe file is under releases under demo/ demo version.
 you have got to make your way through the maze that has been built and reach the house.
 
 The controls are listed below.
