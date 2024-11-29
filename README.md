@@ -1,7 +1,7 @@
 Game Demo for a 3rd Person game
 
 Intructions:
-
+You will have to run the game through GoDot as i have not put it on anyplatform as of yet.
 you have got to make your way through the maze that has been built and reach the house.
 
 The controls are listed below.
