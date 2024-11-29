@@ -1,7 +1,7 @@
 Game Demo for a 3rd Person game
 
 Intructions:
-You will have to run the game through GoDot as i have not put it on anyplatform as of yet.
+You will have to  download the exe file off github to accsess and run the game. to close the game you will have to alt f4.
 you have got to make your way through the maze that has been built and reach the house.
 
 The controls are listed below.
